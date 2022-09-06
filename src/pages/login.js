@@ -2,7 +2,7 @@ import React from "react";
 
 function Login(){
    return(
-    <h2>This is just the trial page.Lets try this page</h2>
+    <h1>This is the login page. This is the page where everyone is going to login from.</h1>
    )
 }
 export default Login
