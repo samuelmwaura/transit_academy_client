@@ -3,12 +3,14 @@ import {NavLink} from "react-router-dom"
 
 function Navbar(){
     return(
-      <nav>
-        <NavLink to={'/'} className="navbar">Home</NavLink>
-        <NavLink to={'/students'}>Students</NavLink>
-        <NavLink to={'/grades'}>Grades</NavLink>
+      <nav className="navbar">
+        <h1>Transit Registry</h1>
+        <NavLink to={'/login'}>logout</NavLink>              
       </nav>
     )
 }
 
 export default Navbar
+
+// <NavLink to={'/students'}>Students</NavLink>
+// <NavLink to={'/grades'}>Grades</NavLink>

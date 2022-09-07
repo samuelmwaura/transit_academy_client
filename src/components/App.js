@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
 import Login from "../pages/login";
 import PageNotFound from "../pages/PageNotFound";
-import LandingPage from "../pages/LandingPage";
 import Student from "../pages/Student";
 
 function App(){
@@ -21,9 +21,9 @@ function App(){
 return (
   <BrowserRouter>
     <Navbar/>
+    <Sidebar />
     <Routes>
-      <Route path="/" element={<LandingPage/>}/>
-      <Route path="/login" element={<Login/>}/>
+      <Route path="/" element={<Student students={students}/>}/>
       <Route path="/students" element={<Student students={students}/>}></Route>
       <Route path="/teacher" element></Route> 
       <Route path="*" element={<PageNotFound />}/>
