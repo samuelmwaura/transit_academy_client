@@ -1,12 +1,19 @@
 import React from "react";
-import DashboardCard from "../components/DashboardCard";
+import AllTeachersCard from "../components/AllTeachersCard.js";
+import PaymentsCard from "../components/PaymentsCard.js";
+import RegisteredCoursesCard from "../components/RegisteredCourseCard.js";
 
 function StudentDashboard(){
 return (
    <> 
-   <div>
+   <div className="studentDashboard">
    <h1>Dashboard </h1> 
-   <DashboardCard/>
+   <div>
+   <RegisteredCoursesCard/>
+   <AllTeachersCard/>
+   <PaymentsCard/>
+   </div>
+   <h1>Campaign courses </h1> 
    </div> 
     </> 
 )

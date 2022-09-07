@@ -5,14 +5,14 @@ function Sidebar(){
 return(
     <div className="sidebar">
     <ul className="">
-        <li><NavLink to={"dashboard"}>Dashboard</NavLink></li>
-        <li><NavLink to={"registrations"} >Registrations</NavLink></li>
-        <li><NavLink to={"grades"}>Grades</NavLink></li>
-        <li><NavLink to={"payments"}>Payments</NavLink></li>
+        <li><NavLink to={"dashboard"}><span class="material-icons">space_dashboard</span>Dashboard</NavLink></li>
+        <li><NavLink to={"registrations"}><span class="material-icons">assignment</span>Registrations</NavLink></li>
+        <li><NavLink to={"grades"}><span class="material-icons">grade</span>Grades</NavLink></li>
+        <li><NavLink to={"payments"}><span class="material-icons">payments</span>Payments</NavLink></li>
     </ul>    
     <div className="loggedInPanel">
-    <h3>Logged in</h3>
-    <h4>as Sam</h4>
+    <h3>You are</h3>
+    <h4>a Student</h4>
         </div>
     </div>
 )

@@ -5,7 +5,7 @@ function Navbar(){
     return(
       <nav className="navbar">
         <h1>Transit Registry</h1>
-        <NavLink to={'/login'}>logout</NavLink>              
+        <NavLink to={'/login'}>logout <span class="material-icons">logout</span></NavLink>              
       </nav>
     )
 }
