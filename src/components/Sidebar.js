@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Sidebar(){
 return(
     <div className="sidebar">
     <ul className="">
-        <li><Link to={"/"}>Dashboard</Link></li>
-        <li><Link to={"/registrations"} >Registrations</Link></li>
-        <li><Link to={"/grades"}>Grades</Link></li>
-        <li><Link to={"/payments"}>Payments</Link></li>
+        <li><NavLink to={"dashboard"}>Dashboard</NavLink></li>
+        <li><NavLink to={"registrations"} >Registrations</NavLink></li>
+        <li><NavLink to={"grades"}>Grades</NavLink></li>
+        <li><NavLink to={"payments"}>Payments</NavLink></li>
     </ul>    
     <div className="loggedInPanel">
     <h3>Logged in</h3>
