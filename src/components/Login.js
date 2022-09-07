@@ -5,12 +5,23 @@ function Login(){
  const [credentials,setCredentials] = useState({username:"",password:""})
 
  function handleOnchange(event){
-    console.log(event.target.value)
   setCredentials({...credentials,[event.target.name]:event.target.value})
  }
 
  function handleLogin(event){
   event.preventDefault()
+   
+  fetch("http://localhost:9292/login",{
+    method:"POST",
+    headers:{
+    "content-Type":"Application/json",
+    "Accept":"Application/json"
+},
+ body:JSON.stringify(credentials)
+  })
+  .then(response => response.json())
+  .then(data=>console.log(data))
+  .catch(error=>console.log(error))
 }
 
    return(
