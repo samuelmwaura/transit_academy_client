@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router-dom";
 
-function Student({students}){
+function Student(){
   return(
     <> 
       <Sidebar />
