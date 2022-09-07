@@ -5,6 +5,60 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(244, 241, 241);
+}
+/*LOGIN PAGE STYLES*/
+
+.loginForm{
+  height: 44.1em;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.loginForm .title{
+  text-align: center;
+  margin-top:1em;
+}
+
+.loginForm form{
+  border:solid;
+  border:1px solid #174e80;
+  border-radius:10px;
+  padding:4em;
+  padding-top:0em;
+  color: #174e80;
+}
+
+.loginForm .label{
+  display: inline-block;
+  margin-right: 2em;
+  width:4.5em;
+  font-size:1.5em;
+}
+
+.loginForm .submit{
+  width:9em;
+  text-align:center;
+  background-color:#174e80;
+  height: 2em;
+  color: white;
+  font-weight: 900;
+  border-radius:10px;
+}
+
+.loginForm .formInput{
+  width: 13em;  
+  height: 2em;
+  margin: 5px;
+  border-radius:5px;
+  border-color: #174e80;
+  background-color: rgb(244, 241, 241);
+}
+
+.loginForm div{
+  display: flex;
+  justify-content: center;
 }
 
 /*NAVBAR STYLES*/
@@ -13,7 +67,7 @@ body {
   text-align: right;
   padding-right: 20px;
   padding-top: 30px;
-  background-color: navy;  
+  background-color: #174e80;  
   display:flex;
   color: white;
   justify-content: space-between;
@@ -37,9 +91,10 @@ margin-bottom:0px;
 .sidebar{
 float: left;
 margin-left: 2em;
+margin-top: 2em;
 width:15em;
 height:30vw;
-background-color: green;
+background-color: #174e80;
 padding-top: 2em;
 border-radius: 10px;
 display: flex;
@@ -61,6 +116,7 @@ justify-content: space-between;
 }
 .sidebar .loggedInPanel{
   margin-bottom: 2em;
+  color: white;
 }
 
 .active{
@@ -72,7 +128,7 @@ justify-content: space-between;
 
 /*STUDENT PAGE STYLES*/
 .studentPage{
-  background-color: aqua;
+  background-color: rgb(244, 241, 241);
   margin-left:17em;
 }
 .welcome{
@@ -110,7 +166,7 @@ justify-content: space-between;
 }
 
 .dashboardCard{
-  background-color: navy;
+  background-color: #174e80;
   color: white;
   height:9em;
   width:18em;
@@ -134,22 +190,26 @@ padding-top:1em ;
 }
 
 .studentDashboard #courses{
-  background-color: #a52a2a;
+  background-color: #174e80;
   height:18.7em;
   width:100%;
   overflow-y: scroll;
+
 }
 #courses .courseCard{
-  border:solid;
   margin: 2em;
   height: 4.5em;
   width: 15em;
   display:inline-grid;
+  align-items: center;
+  justify-content: center;
   padding-left:10px;
   border-radius: 10px;
+  background-color: rgb(244, 241, 241);
 }
 
 .courseCard p {
 margin-top: 1px;
 margin-bottom:1px;
 }
+

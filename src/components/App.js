@@ -5,6 +5,7 @@ import PageNotFound from "../pages/PageNotFound";
 import Student from "../pages/Student";
 import StudentDashboard from "../pages/StudentDashboard";
 import Registrations from "../pages/Registrations";
+import Login from "./Login";
 
 function App(){
 
@@ -13,10 +14,7 @@ function App(){
  useEffect(()=>{
     fetch("http://localhost:9292/courses")
     .then(response=>response.json())
-    .then(data=>{
-      console.log(data)
-      setCourses(data)
-    })
+    .then(data=>setCourses(data))
     .catch(err=>console.log(err))
  },[])
 
@@ -25,6 +23,7 @@ return (
   <BrowserRouter>
     <Navbar/>
     <Routes>
+      <Route path="/" element={<Login/>}/>
       <Route path="/students" element={<Student/>}>
          <Route path="registrations" element={<Registrations />}/>
          <Route path="grades" element={<StudentDashboard courses={courses}/>} />
