@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 
 
-function RegisterForm({loggedInUser,courses }) {
+function RegisterForm({loggedInUser,courses,setloggedInUser}) {
    const [newDetails,setNewDetails] = useState({student_name:loggedInUser.first_name+"  "+loggedInUser.last_name,course_name:"",student_id:loggedInUser.id,course_id:""})
    const [isCreated,setIsCreated] = useState(false)
 
@@ -10,7 +10,8 @@ function RegisterForm({loggedInUser,courses }) {
 // }
 
 function handleOnchange(event){
-    setNewDetails({...newDetails,course_name:event.target.value[1],course_id:event.target.value[0]})
+    const courseDetails = event.target.value.split(",")  //Splits the value string ito an array of 2 elements
+    setNewDetails({...newDetails,course_name:courseDetails[1],course_id:courseDetails[0]})
 }
 
   function handleOnsubmit(event){
@@ -27,10 +28,9 @@ function handleOnchange(event){
     .then(response => response.json())
     .then(data =>{
        console.log(data)
-       setIsCreated(()=>{
        const newRegistration = [data,...loggedInUser.registrations]
-       setNewDetails({...loggedInUser,registrations:newRegistration})
-        })
+       setloggedInUser({...loggedInUser,registrations:newRegistration})
+       setIsCreated(true)
     })
     .catch(error=>console.log(error))
  }
@@ -42,7 +42,7 @@ function handleOnchange(event){
             <br />
             <br />
             <label>New Course</label><select name="course_id" onChange={handleOnchange}> 
-            {courses.map(course=><option value={[course.id,course.course_name]} key={course.id}>{course.course_name}</option>)}            
+            {courses.map(course=><option value={[course.id, course.course_name]} key={course.id}>{course.course_name}</option>)}            
             </select>
             <br />
             <br />

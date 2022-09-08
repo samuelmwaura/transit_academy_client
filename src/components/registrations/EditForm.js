@@ -23,6 +23,7 @@ function Editform({loggedInUser,courses,setloggedInUser}){
      .then(data=>{
         setUpdated(true)
         setloggedInUser(()=>{
+            //was a lot of fun comming up with this piece of code
          const  newRegistrations = loggedInUser.registrations.map(registration =>{
             if(registration.id === data.id) registration = data
             return registration
