@@ -193,7 +193,7 @@ padding-top:1em ;
 }
 
 .studentDashboard #courses{
-  background-color: #174e80;
+  background-color: rgb(244, 241, 241);
   height:18.7em;
   width:100%;
   overflow-y: scroll;
@@ -208,11 +208,12 @@ padding-top:1em ;
   justify-content: center;
   padding-left:10px;
   border-radius: 10px;
-  background-color: rgb(244, 241, 241);
+  background-color: white;
 }
 
 .courseCard p {
 margin-top: 1px;
+color: #0b4882;
 margin-bottom:1px;
 }
 
@@ -255,7 +256,7 @@ margin-bottom:1px;
 
 
 .registerForm{
-  border: solid 1px blue;
+  border: solid 1px #174e80;
   width: 25em;
   margin-top:3em;
   margin-right:4.5em;
