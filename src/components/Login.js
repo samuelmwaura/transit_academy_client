@@ -1,8 +1,13 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState} from "react";
+import { NavLink, useNavigate} from "react-router-dom";
 
-function Login(){
+
+
+function Login({setLoggedInUser}){
  const [credentials,setCredentials] = useState({username:"",password:""})
+ const [passed,setPassed] =useState(true)
+
+ const navigate = useNavigate()
 
  function handleOnchange(event){
   setCredentials({...credentials,[event.target.name]:event.target.value})
@@ -20,7 +25,14 @@ function Login(){
  body:JSON.stringify(credentials)
   })
   .then(response => response.json())
-  .then(data=>console.log(data))
+  .then(data=>{
+        if(data){
+        localStorage.setItem("loggedInUser",JSON.stringify(data))//Setting the logged user to be persisted
+        setLoggedInUser(data)
+        navigate('/students/dashboard')
+        } 
+        setPassed(!passed)
+  })
   .catch(error=>console.log(error))
 }
 
@@ -42,7 +54,9 @@ function Login(){
             <div>
             <button className="submit" type="submit"> Sign in</button>
             </div>
+            <p>{passed?null:"Incorrect username or password."}</p>
         </form>
+
     </div>
    )
 }

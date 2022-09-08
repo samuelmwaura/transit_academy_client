@@ -1,11 +1,18 @@
 import React from "react";
-import {NavLink} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+function Navbar({loggedInUser,setLoggedInUser}){
+  
+ const navigate = useNavigate()
+ function handleOnClick(){
+  localStorage.clear()
+  setLoggedInUser(null)
+   navigate('/')
+ }
 
-function Navbar(){
     return(
       <nav className="navbar">
         <h1>Transit Registry</h1>
-        <NavLink to={'/login'}>logout <span className="material-icons">logout</span></NavLink>              
+        <p onClick={handleOnClick}>{loggedInUser?<span className="material-icons">logout</span>:null}</p>             
       </nav>
     )
 }

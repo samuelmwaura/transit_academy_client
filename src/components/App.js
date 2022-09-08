@@ -10,25 +10,28 @@ import Login from "./Login";
 function App(){
 
  const [courses,setCourses] = useState([])
+ const [loggedInUser,setloggedInUser]= useState({})
 
  useEffect(()=>{
     fetch("http://localhost:9292/courses")
     .then(response=>response.json())
-    .then(data=>setCourses(data))
+    .then(data=>{
+      setCourses(data)
+      setloggedInUser(JSON.parse(localStorage.getItem("loggedInUser")))             
+    })
     .catch(err=>console.log(err))
  },[])
 
- 
 return (
   <BrowserRouter>
-    <Navbar/>
+    <Navbar loggedInUser={loggedInUser} setLoggedInUser={setloggedInUser}/>
     <Routes>
-      <Route path="/" element={<Login/>}/>
-      <Route path="/students" element={<Student/>}>
+      <Route path="/" element={<Login setLoggedInUser={setloggedInUser}/>}/>
+      <Route path="/students" element={<Student loggedInUser={loggedInUser}/>}>
          <Route path="registrations" element={<Registrations />}/>
-         <Route path="grades" element={<StudentDashboard courses={courses}/>} />
-         <Route path="payments" element={<StudentDashboard courses={courses}/>}/>
-         <Route path="dashboard" element={<StudentDashboard courses={courses}/>} />
+         <Route path="grades" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>} />
+         <Route path="payments" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>}/>
+         <Route path="dashboard" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>} />
       </Route>
       <Route path="/teacher" element></Route> 
       <Route path="*" element={<PageNotFound />}/>

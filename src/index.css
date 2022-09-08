@@ -61,6 +61,9 @@ body {
   justify-content: center;
 }
 
+.loginForm p{
+  color: brown;
+}
 /*NAVBAR STYLES*/
 .navbar{
   height:4em;
