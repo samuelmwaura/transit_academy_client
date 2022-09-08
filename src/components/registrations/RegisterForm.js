@@ -1,6 +1,8 @@
 import React from 'react'
 
 function RegisterForm({loggedInUser}) {
+   
+
   return (
     <form className="registerForm">
             <h3 className="title">Register A Course</h3>

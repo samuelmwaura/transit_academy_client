@@ -30,7 +30,7 @@ return (
     <Routes>
       <Route path="/" element={<Login setLoggedInUser={setloggedInUser}/>}/>
       <Route path="/students" element={<Student loggedInUser={loggedInUser}/>}>
-         <Route path="registrations" element={<Registrations loggedInUser={loggedInUser} courses={courses}/>}/>
+         <Route path="registrations" element={<Registrations loggedInUser={loggedInUser} courses={courses} setloggedInUser={setloggedInUser}/>}/>
          <Route path="grades" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>} />
          <Route path="payments" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>}/>
          <Route path="dashboard" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>} />

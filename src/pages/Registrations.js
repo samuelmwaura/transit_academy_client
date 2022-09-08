@@ -2,7 +2,7 @@ import React from "react";
 import Editform from "../components/registrations/EditForm";
 import RegisterForm from "../components/registrations/RegisterForm";
 
-function Registrations({loggedInUser,courses}){
+function Registrations({loggedInUser,courses,setloggedInUser}){
    return(
       <div className="studentDashboard">
          <h1>Your Registrations</h1>
@@ -26,7 +26,7 @@ function Registrations({loggedInUser,courses}){
    <h1>Edit registrations</h1>
    <div id="editforms">
    <RegisterForm loggedInUser={loggedInUser}/>
-   <Editform loggedInUser={loggedInUser} courses={courses}/>
+   <Editform loggedInUser={loggedInUser} courses={courses} setloggedInUser={setloggedInUser}/>
 
    </div>
    </div>
