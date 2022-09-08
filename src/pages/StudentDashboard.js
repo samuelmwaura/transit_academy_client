@@ -4,15 +4,15 @@ import CourseCard from "../components/CourseCard.js";
 import PaymentsCard from "../components/PaymentsCard.js";
 import RegisteredCoursesCard from "../components/RegisteredCourseCard.js";
 
-function StudentDashboard({courses}){
+function StudentDashboard({courses, loggedInUser}){
 return (
    <> 
    <div className="studentDashboard">
    <h1>Summaries </h1> 
    <div id="summaries">
-   <RegisteredCoursesCard/>
-   <AllTeachersCard/>
-   <PaymentsCard/>
+   <RegisteredCoursesCard loggedInUser={loggedInUser}/>
+   <AllTeachersCard loggedInUser={loggedInUser}/>
+   <PaymentsCard loggedInUser={loggedInUser}/>
    </div>
    <h1>Campaign courses</h1>
    <div id="courses">

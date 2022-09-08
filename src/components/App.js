@@ -10,7 +10,7 @@ import Login from "./Login";
 function App(){
 
  const [courses,setCourses] = useState([])
- const [loggedInUser,setloggedInUser]= useState({})
+ const [loggedInUser,setloggedInUser]= useState(null)
 
  useEffect(()=>{
     fetch("http://localhost:9292/courses")
