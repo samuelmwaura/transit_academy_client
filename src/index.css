@@ -237,7 +237,7 @@ margin-bottom:1px;
   padding: 8px;
 }
 
-.table  tr:nth-child(even){background-color: #f2f2f2;}
+.table  tr:nth-child(even){background-color: #ddd;}
 
 .table  tr:hover {background-color: #ddd;}
 
@@ -258,6 +258,7 @@ margin-bottom:1px;
 .registerForm{
   border: solid 1px #174e80;
   width: 25em;
+  margin-bottom:3em;
   margin-top:3em;
   margin-right:4.5em;
   border-radius: 10px;
@@ -269,4 +270,7 @@ margin-bottom:1px;
   width:7em;
 }
 
+.registerForm p{
+  color:green
+}
 

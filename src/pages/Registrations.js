@@ -25,7 +25,7 @@ function Registrations({loggedInUser,courses,setloggedInUser}){
    </div>
    <h1>Edit registrations</h1>
    <div id="editforms">
-   <RegisterForm loggedInUser={loggedInUser}/>
+   <RegisterForm loggedInUser={loggedInUser} courses={courses} setloggedInUser={setloggedInUser}/>
    <Editform loggedInUser={loggedInUser} courses={courses} setloggedInUser={setloggedInUser}/>
 
    </div>
