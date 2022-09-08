@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function Sidebar(){
+function Sidebar({loggedInCategory}){
 return(
     <div className="sidebar">
     <ul className="">
@@ -12,7 +12,7 @@ return(
     </ul>    
     <div className="loggedInPanel">
     <h3>You are</h3>
-    <h4>a Student</h4>
+    <h4>a {loggedInCategory}</h4>
         </div>
     </div>
 )

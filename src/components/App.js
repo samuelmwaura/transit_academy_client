@@ -9,15 +9,17 @@ import Login from "./Login";
 
 function App(){
 
+ const initialUser = JSON.parse(localStorage.getItem("loggedInUser"))
+
  const [courses,setCourses] = useState([])
- const [loggedInUser,setloggedInUser]= useState(null)
+ const [loggedInUser,setloggedInUser]= useState(initialUser)
+
 
  useEffect(()=>{
     fetch("http://localhost:9292/courses")
     .then(response=>response.json())
     .then(data=>{
       setCourses(data)
-      setloggedInUser(JSON.parse(localStorage.getItem("loggedInUser")))             
     })
     .catch(err=>console.log(err))
  },[])
@@ -28,7 +30,7 @@ return (
     <Routes>
       <Route path="/" element={<Login setLoggedInUser={setloggedInUser}/>}/>
       <Route path="/students" element={<Student loggedInUser={loggedInUser}/>}>
-         <Route path="registrations" element={<Registrations />}/>
+         <Route path="registrations" element={<Registrations loggedInUser={loggedInUser}/>}/>
          <Route path="grades" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>} />
          <Route path="payments" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>}/>
          <Route path="dashboard" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>} />
