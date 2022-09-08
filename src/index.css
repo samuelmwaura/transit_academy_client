@@ -30,7 +30,7 @@ body {
   color: #174e80;
 }
 
-.loginForm .label{
+.loginForm .label,.registerForm label{
   display: inline-block;
   margin-right: 2em;
   width:4.5em;
@@ -47,7 +47,7 @@ body {
   border-radius:10px;
 }
 
-.loginForm .formInput{
+.loginForm .formInput,.registerForm input, .registerForm select{
   width: 13em;  
   height: 2em;
   margin: 5px;
@@ -133,7 +133,7 @@ justify-content: space-between;
 .studentPage{
   background-color: rgb(244, 241, 241);
   margin-left:17em;
-}
+} 
 .welcome{
   display: flex;
   flex-direction:column;
@@ -220,10 +220,14 @@ margin-bottom:1px;
 #table{
   display:flex;
   justify-content: center;
+  height:10em;
+  overflow-y: scroll;
 }
-  .table{
+
+.table{
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
+
   width: 60%;
 }
 
@@ -243,4 +247,25 @@ margin-bottom:1px;
   background-color: #174e80;
   color: white;
 }
+
+#editforms{
+  display: flex;
+  justify-content: space-between; 
+}
+
+
+.registerForm{
+  border: solid 1px blue;
+  width: 25em;
+  margin-top:3em;
+  margin-right:4.5em;
+  border-radius: 10px;
+  padding:3em;
+}
+
+.registerForm label{
+  font-size:1.3em;
+  width:7em;
+}
+
 
