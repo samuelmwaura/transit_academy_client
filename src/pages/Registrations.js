@@ -12,9 +12,18 @@ function Registrations({loggedInUser,courses,setloggedInUser}){
          method:"DELETE"
       })
       .then(response=>response.json())
-      .then(data=>console.log(data))
+      .then(data=>{
+         console.log(data)
+         setloggedInUser(()=>{
+            const remainingRegistrations = loggedInUser.registrations.filter(registration=>registration.id !== data.id)
+            console.log(remainingRegistrations)
+            return {...loggedInUser,registrations:remainingRegistrations}
+         })
+      })
       .catch(error=>console.error(error))
-   }else{
+   }
+   
+   else{
       return null
    }
  }
