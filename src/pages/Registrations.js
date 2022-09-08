@@ -3,6 +3,22 @@ import Editform from "../components/registrations/EditForm";
 import RegisterForm from "../components/registrations/RegisterForm";
 
 function Registrations({loggedInUser,courses,setloggedInUser}){
+
+ function handleDelete(id){
+   if(window.confirm("Confirm De-registration from the course.")){
+      console.log(id)
+
+      fetch(`http://localhost:9292/registrations/${id}`,{
+         method:"DELETE"
+      })
+      .then(response=>response.json())
+      .then(data=>console.log(data))
+      .catch(error=>console.error(error))
+   }else{
+      return null
+   }
+ }
+
    return(
       <div className="studentDashboard">
          <h1>Your Registrations</h1>
@@ -12,6 +28,7 @@ function Registrations({loggedInUser,courses,setloggedInUser}){
          <tr>
             <th>Course Name</th>
             <th>Course Code</th>
+            <th>Action</th>
          </tr>
       </thead>
       <tbody>         
@@ -19,6 +36,7 @@ function Registrations({loggedInUser,courses,setloggedInUser}){
         return <tr key={registration.id}>
             <td>{registration.course.course_name}</td>
             <td>{registration.course.course_code}</td>
+            <td><button onClick={()=>handleDelete(registration.id)}>Delete</button></td>
          </tr>})}         
       </tbody>
    </table>   

@@ -5,9 +5,6 @@ function RegisterForm({loggedInUser,courses,setloggedInUser}) {
    const [newDetails,setNewDetails] = useState({student_name:loggedInUser.first_name+"  "+loggedInUser.last_name,course_name:"",student_id:loggedInUser.id,course_id:""})
    const [isCreated,setIsCreated] = useState(false)
 
-// function handleOnchange(event){
-//    setNewDetails({...newDetails,[event.target.name]:event.target.value})
-// }
 
 function handleOnchange(event){
     const courseDetails = event.target.value.split(",")  //Splits the value string ito an array of 2 elements
@@ -41,7 +38,8 @@ function handleOnchange(event){
             <label >Name:</label><input type='text' name="student_name" value={loggedInUser.first_name +"  "+ loggedInUser.last_name} required readOnly/>
             <br />
             <br />
-            <label>New Course</label><select name="course_id" onChange={handleOnchange}> 
+            <label>New Course</label><select name="course_id" onChange={handleOnchange} required> 
+            <option>Select a course</option>
             {courses.map(course=><option value={[course.id, course.course_name]} key={course.id}>{course.course_name}</option>)}            
             </select>
             <br />

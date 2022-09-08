@@ -42,11 +42,13 @@ function Editform({loggedInUser,courses,setloggedInUser}){
             <br />
             <br />
             <label>Course Name</label><select name="id" onChange={handleOnchange} value={updateDetails.id}> 
+            <option>Select Current Course</option>
             {loggedInUser.registrations.map(registration=><option value={registration.id} key={registration.id}>{registration.course.course_name}</option>)}            
             </select>
             <br />
             <br />
             <label>New Course</label><select name="course_id" onChange={handleOnchange} value={updateDetails.course_id}> 
+            <option>Select New Course</option>
             {courses.map(course=><option value={course.id} key={course.id}>{course.course_name}</option>)}            
             </select>
             <br />
