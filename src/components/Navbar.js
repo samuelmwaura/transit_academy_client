@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+
 function Navbar({loggedInUser,setLoggedInUser}){
   
  const navigate = useNavigate()
+
  function handleOnClick(){
   localStorage.clear()
   setLoggedInUser(null)

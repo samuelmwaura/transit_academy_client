@@ -1,20 +1,25 @@
-import React from 'react'
+import React,{useEffect}from 'react'
+import Allocations from '../../components/teacher/Allocations';
 import AllAllocationsCard from './AllAllocationsCard'
+import AllStudentsCard from './AllStudentsCard';
 
-function TeacherDashboard({loggedInUser}) {
+function TeacherDashboard({loggedInUser,aTeacherStudents}) {
+
+    
+
   return (
-    <> 
-   <div className="studentDashboard">
-   <h1>Summaries </h1> 
-   <div id="summaries">
-   <AllAllocationsCard loggedInUser={loggedInUser}/>
-   </div>
+         
+      <div className="studentDashboard">
+      <h1>Summaries </h1> 
+      <div id="summaries">
+        <AllStudentsCard aTeacherStudents={aTeacherStudents}/>
+       <AllAllocationsCard loggedInUser={loggedInUser}/>
+      </div>
 
-   <h1>Campaign courses</h1>
-   
-   
-   </div> 
-    </> 
+      <h1>Allocation details</h1>
+      <Allocations loggedInUser={loggedInUser}/>
+      
+      </div> 
   )
 }
 
