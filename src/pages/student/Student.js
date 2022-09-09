@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../../components/student/Sidebar";
 import { Outlet } from "react-router-dom";
 
 function Student({loggedInUser}){

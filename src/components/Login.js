@@ -27,9 +27,16 @@ function Login({setLoggedInUser}){
   .then(response => response.json())
   .then(data=>{
         if(data){
-        localStorage.setItem("loggedInUser",JSON.stringify(data))//Setting the logged user to be persisted
-        setLoggedInUser(data)
-        navigate('/students/dashboard')
+            localStorage.setItem("loggedInUser",JSON.stringify(data))//Setting the logged user to be persisted
+            setLoggedInUser(data)
+            if(data.registration_number){
+            navigate('/students/dashboard')
+             }else if(data.staff_number){
+            navigate('/teachers/dashboard')
+             }
+             else{
+            navigate("/finance")
+             }
         } 
         setPassed(!passed)
   })

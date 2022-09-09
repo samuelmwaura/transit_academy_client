@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Navbar from "./Navbar";
 import PageNotFound from "../pages/PageNotFound";
-import Student from "../pages/Student";
-import StudentDashboard from "../pages/StudentDashboard";
-import Registrations from "../pages/Registrations";
+import Student from "../pages/student/Student";
+import StudentDashboard from "../pages/student/StudentDashboard";
+import Registrations from "../pages/student/Registrations";
 import Login from "./Login";
+import Teacher from "../pages/teacher/Teacher";
+import TeacherDashboard from "../pages/teacher/TeacherDashboard";
 
 function App(){
 
@@ -35,7 +37,12 @@ return (
          <Route path="payments" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>}/>
          <Route path="dashboard" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>} />
       </Route>
-      <Route path="/teacher" element></Route> 
+      <Route path="/teachers" element={<Teacher loggedInUser={loggedInUser}/>}>
+        <Route path="dashboard" element={<TeacherDashboard loggedInUser={loggedInUser}/>}/>
+        <Route path=""/>
+        <Route path=""/>
+        <Route path=""/>        
+      </Route> 
       <Route path="*" element={<PageNotFound />}/>
     </Routes>
   </BrowserRouter>

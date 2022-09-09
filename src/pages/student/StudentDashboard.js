@@ -1,8 +1,8 @@
 import React from "react";
-import AllTeachersCard from "../components/AllTeachersCard.js";
-import CourseCard from "../components/CourseCard.js";
-import PaymentsCard from "../components/PaymentsCard.js";
-import RegisteredCoursesCard from "../components/RegisteredCourseCard.js";
+import AllTeachersCard from "../../components/student/AllTeachersCard.js";
+import CourseCard from "../../components/student/CourseCard.js";
+import PaymentsCard from "../../components/student/PaymentsCard.js";
+import RegisteredCoursesCard from "../../components/student/RegisteredCourseCard.js.js";
 
 function StudentDashboard({courses, loggedInUser}){
 return (

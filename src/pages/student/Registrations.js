@@ -1,6 +1,6 @@
 import React from "react";
-import Editform from "../components/registrations/EditForm";
-import RegisterForm from "../components/registrations/RegisterForm";
+import Editform from "../../components/student/EditForm";
+import RegisterForm from "../../components/student/RegisterForm";
 
 function Registrations({loggedInUser,courses,setloggedInUser}){
 
