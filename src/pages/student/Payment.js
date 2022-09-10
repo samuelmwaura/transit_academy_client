@@ -1,17 +1,8 @@
 import React, { useEffect,useState } from "react";
 
-function Payments({loggedInUser}){
-    const [studentPayments,setStudentPayments] = useState([])
+function Payments({loggedInUser,studentPayments}){
    
-   useEffect(()=>{
-     
-    fetch(`http://localhost:9292/students/payments/${loggedInUser.id}`)
-    .then(response=>response.json())
-    .then(data=>setStudentPayments([...data.payments ]))
-    .catch(error=>console.log(error))
-
-   },[])
-
+   
   return(
     <div className="studentDashboard">
         <h1>Semester Payments.</h1>

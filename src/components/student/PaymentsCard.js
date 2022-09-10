@@ -1,10 +1,23 @@
-import React from "react";
+import React,{useEffect} from "react";
 
-function PaymentsCard({loggedInUser}){
+function PaymentsCard({loggedInUser,studentPayments,setStudentPayments}){
+
+  useEffect(()=>{     
+    fetch(`http://localhost:9292/students/payments/${loggedInUser.id}`)
+    .then(response=>response.json())
+    .then(data=>setStudentPayments([...data.payments ]))
+    .catch(error=>console.log(error))
+   },[])
+
+  const totalFees = studentPayments.reduce((total,payment)=>{
+      return total + payment.amount
+  },0)
+
+  console.log(studentPayments)
     return(
         <div className="dashboardCard">
         <span className="material-icons">payment</span>
-        <h2><span>{loggedInUser.registrations.length}</span>Courses paid-For</h2>
+        <h2><span>{totalFees}</span>Semester Payment</h2>
         </div>
       )    
 }

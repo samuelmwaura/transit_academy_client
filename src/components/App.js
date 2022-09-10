@@ -18,6 +18,7 @@ function App(){
  const [courses,setCourses] = useState([])
  const [loggedInUser,setloggedInUser]= useState(initialUser)
  const [aTeacherStudents,setaTeacherStudents] = useState([])
+ const [studentPayments,setStudentPayments] = useState([])
 
 
 
@@ -38,9 +39,9 @@ return (
       <Route path="/" element={<Login setLoggedInUser={setloggedInUser}/>}/>
       <Route path="/students" element={<Student loggedInUser={loggedInUser}/>}>
          <Route path="registrations" element={<Registrations loggedInUser={loggedInUser} courses={courses} setloggedInUser={setloggedInUser}/>}/>
-         <Route path="grades" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>} />
-         <Route path="payments" element={<Payments loggedInUser={loggedInUser}/>}/>
-         <Route path="dashboard" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>} />
+         <Route path="grades" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser} studentPayments={studentPayments} setStudentPayments={setStudentPayments}/>} />
+         <Route path="payments" element={<Payments studentPayments={studentPayments} setStudentPayments={setStudentPayments} loggedInUser={loggedInUser}/>}/>
+         <Route path="dashboard" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser} studentPayments={studentPayments} setStudentPayments={setStudentPayments}/>} />
       </Route>
       <Route path="/teachers" element={<Teacher loggedInUser={loggedInUser} />}>
         <Route path="dashboard" element={<TeacherDashboard loggedInUser={loggedInUser} aTeacherStudents={aTeacherStudents} setaTeacherStudents={setaTeacherStudents}/>}/>

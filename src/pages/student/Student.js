@@ -18,7 +18,7 @@ function Student({loggedInUser}){
           <h4>Welcome</h4>
           <h3>{loggedInUser.last_name}!</h3>
         </div>
-        <Outlet className="outlet" />
+        <Outlet className="outlet" trust={loggedInUser.last_name}/>
       </div>
     </>
   )
