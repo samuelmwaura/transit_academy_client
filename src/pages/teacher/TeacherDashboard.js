@@ -12,7 +12,7 @@ function TeacherDashboard({loggedInUser,aTeacherStudents}) {
       <div className="studentDashboard">
       <h1>Summaries </h1> 
       <div id="summaries">
-        <AllStudentsCard aTeacherStudents={aTeacherStudents}/>
+        <AllStudentsCard loggedInUser={loggedInUser}/>
        <AllAllocationsCard loggedInUser={loggedInUser}/>
       </div>
 
