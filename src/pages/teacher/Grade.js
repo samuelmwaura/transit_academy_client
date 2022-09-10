@@ -9,8 +9,8 @@ function Grade({loggedInUser}){
       <div className="studentDashboard">
       <h1>Grade Your Students </h1> 
       <div id="summaries">
-      <div id="selectCourseToGrade">
-        <label>Allocated Course:</label><select>
+      <div className="selectCourseToGrade">
+        <label>Allocated Course:</label><select className="selector">
         <option selected>Select coourse to grade</option>
         {loggedInUser.allocations.map(allocation=><option>{allocation.course.course_name}</option>)}
         </select>

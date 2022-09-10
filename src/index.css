@@ -280,13 +280,20 @@ margin-bottom:1px;
 }
 
 /*Teacher's grading page */
-#selectCourseToGrade{
+.selectCourseToGrade{
   display: flex;
   width:41em;
   justify-content:space-around;
+  margin-bottom:1em;
+  }
+
+.selectCourseToGrade input{
+  width:17em;
+  height: 1.5em;
 }
 
-#selectCourseToGrade select{
+
+ .selector{
   width:22em;
   height:2em;
   font-size:0.9em;
@@ -298,4 +305,19 @@ margin-bottom:1px;
 #paymentsTable{
   width: 40em;
   height: auto;
+}
+
+
+/* finance page styles */
+#allpayments{
+  height:28em;
+  overflow-y: scroll;
+}
+
+#financeView{
+  display: flex;
+}
+
+#financeView .table{
+  width: 37em;
 }

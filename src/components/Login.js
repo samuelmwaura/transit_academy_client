@@ -35,7 +35,7 @@ function Login({setLoggedInUser}){
             navigate('/teachers/dashboard')
              }
              else{
-            navigate("/finance")
+            navigate("/finance/dashboard")
              }
         } 
         setPassed(!passed)

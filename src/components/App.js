@@ -10,6 +10,7 @@ import Teacher from "../pages/teacher/Teacher";
 import TeacherDashboard from "../pages/teacher/TeacherDashboard";
 import Grade from "../pages/teacher/Grade";
 import Payments from "../pages/student/Payment";
+import Finance from "../pages/finance/Finance";
 
 function App(){
 
@@ -23,7 +24,6 @@ function App(){
 
 
  useEffect(()=>{
-
     fetch("http://localhost:9292/courses")
     .then(response=>response.json())
     .then(data=>{
@@ -45,10 +45,9 @@ return (
       </Route>
       <Route path="/teachers" element={<Teacher loggedInUser={loggedInUser} />}>
         <Route path="dashboard" element={<TeacherDashboard loggedInUser={loggedInUser} aTeacherStudents={aTeacherStudents} setaTeacherStudents={setaTeacherStudents}/>}/>
-        <Route path="grade" element={<Grade loggedInUser={loggedInUser}/>}/>
-        <Route path=""/>
-        <Route path=""/>        
+        <Route path="grade" element={<Grade loggedInUser={loggedInUser}/>}/>   
       </Route> 
+      <Route path="/finance/dashboard" element={<Finance loggedInUser={loggedInUser}/> }/>
       <Route path="*" element={<PageNotFound />}/>
     </Routes>
   </BrowserRouter>
