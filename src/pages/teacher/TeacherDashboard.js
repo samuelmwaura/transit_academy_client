@@ -17,8 +17,7 @@ function TeacherDashboard({loggedInUser,aTeacherStudents}) {
       </div>
 
       <h1>Allocation details</h1>
-      <Allocations loggedInUser={loggedInUser}/>
-      
+      <Allocations loggedInUser={loggedInUser}/>      
       </div> 
   )
 }

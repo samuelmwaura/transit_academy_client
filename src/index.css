@@ -274,3 +274,23 @@ margin-bottom:1px;
   color:green
 }
 
+/*Teacher's grading page */
+#selectCourseToGrade{
+  display: flex;
+  width:41em;
+  justify-content:space-around;
+}
+
+#selectCourseToGrade select{
+  width:22em;
+  height:2em;
+  font-size:0.9em;
+  border-radius:3px;
+  border:solid 1px #174e80;
+}
+
+/* STUDENTS PAYMENTS PAGE */
+#paymentsTable{
+  width: 40em;
+  height: auto;
+}

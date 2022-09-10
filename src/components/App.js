@@ -8,6 +8,8 @@ import Registrations from "../pages/student/Registrations";
 import Login from "./Login";
 import Teacher from "../pages/teacher/Teacher";
 import TeacherDashboard from "../pages/teacher/TeacherDashboard";
+import Grade from "../pages/teacher/Grade";
+import Payments from "../pages/student/Payment";
 
 function App(){
 
@@ -37,12 +39,12 @@ return (
       <Route path="/students" element={<Student loggedInUser={loggedInUser}/>}>
          <Route path="registrations" element={<Registrations loggedInUser={loggedInUser} courses={courses} setloggedInUser={setloggedInUser}/>}/>
          <Route path="grades" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>} />
-         <Route path="payments" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>}/>
+         <Route path="payments" element={<Payments loggedInUser={loggedInUser}/>}/>
          <Route path="dashboard" element={<StudentDashboard courses={courses} loggedInUser={loggedInUser}/>} />
       </Route>
       <Route path="/teachers" element={<Teacher loggedInUser={loggedInUser} />}>
         <Route path="dashboard" element={<TeacherDashboard loggedInUser={loggedInUser} aTeacherStudents={aTeacherStudents} setaTeacherStudents={setaTeacherStudents}/>}/>
-        <Route path=""/>
+        <Route path="grade" element={<Grade loggedInUser={loggedInUser}/>}/>
         <Route path=""/>
         <Route path=""/>        
       </Route> 

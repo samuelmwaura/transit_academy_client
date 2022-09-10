@@ -6,7 +6,7 @@ return(
     <div className="sidebar">
     <ul className="">
         <li><NavLink to={"dashboard"}><span className="material-icons">space_dashboard</span>Dashboard</NavLink></li>
-        <li><NavLink to={"grades"}><span className="material-icons">grade</span>Grades</NavLink></li>
+        <li><NavLink to={"grade"}><span className="material-icons">grade</span>Grades</NavLink></li>
     </ul>    
     <div className="loggedInPanel">
     <h4>Teacher</h4>

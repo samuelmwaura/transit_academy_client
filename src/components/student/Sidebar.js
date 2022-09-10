@@ -8,7 +8,7 @@ return(
         <li><NavLink to={"dashboard"}><span className="material-icons">space_dashboard</span>Dashboard</NavLink></li>
         <li><NavLink to={"registrations"}><span className="material-icons">assignment</span>Registrations</NavLink></li>
         <li><NavLink to={"grades"}><span className="material-icons">grade</span>Grades</NavLink></li>
-        {/* <li><NavLink to={"payments"}><span className="material-icons">payments</span>Payments</NavLink></li> */}
+        <li><NavLink to={"payments"}><span className="material-icons">payments</span>Payments</NavLink></li>
     </ul>    
     <div className="loggedInPanel">    
     <h4> {loggedInCategory}</h4>
