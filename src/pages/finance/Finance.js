@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CreatePaymentForm from "./CreatePaymentForm";
 import FinanceSidebar from "./FinanceSidebar";
 
 function Finance({loggedInUser}){
@@ -51,7 +52,10 @@ const displayedPyments = studentPayments.filter(payment => payment.student_name.
         </tbody>
      </table>   
       </div>
-      <div>The true</div>
+      <div id="registerPayment">
+        <h2>Record a School fees payment.</h2>
+        <CreatePaymentForm />
+        </div>
       </div>
       
       </div>

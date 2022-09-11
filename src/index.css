@@ -321,3 +321,8 @@ margin-bottom:1px;
 #financeView .table{
   width: 37em;
 }
+#registerPayment{
+ display: flex;
+ flex-direction: column;
+ padding-left: 3em;
+}

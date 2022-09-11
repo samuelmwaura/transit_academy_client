@@ -7,7 +7,7 @@ function RegisterForm({loggedInUser,courses,setloggedInUser}) {
 
 
 function handleOnchange(event){
-    const courseDetails = event.target.value.split(",")  //Splits the value string ito an array of 2 elements
+    const courseDetails = event.target.value.split(",")  //Splits the value string into an array of 2 elements
     setNewDetails({...newDetails,course_name:courseDetails[1],course_id:courseDetails[0]})
 }
 
