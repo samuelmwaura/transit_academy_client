@@ -37,6 +37,7 @@ function Registrations({loggedInUser,courses,setloggedInUser}){
          <tr>
             <th>Course Name</th>
             <th>Course Code</th>
+            <th>Current Grade</th>
             <th>Action</th>
          </tr>
       </thead>
@@ -45,7 +46,8 @@ function Registrations({loggedInUser,courses,setloggedInUser}){
         return <tr key={registration.id}>
             <td>{registration.course.course_name}</td>
             <td>{registration.course.course_code}</td>
-            <td><button onClick={()=>handleDelete(registration.id)}>Delete</button></td>
+            <td>{registration.grade}</td>
+            <td>{registration.grade === "Not Graded"?<button onClick={()=>handleDelete(registration.id)}>Delete</button>:null}</td>
          </tr>})}         
       </tbody>
    </table>   

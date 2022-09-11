@@ -47,7 +47,7 @@ fetch("http://localhost:9292/payments",{
             <br />
             <br />
             <label>Student Name</label><select name="course_id" onChange={handleNameOnchange} required> 
-            <option>Select a course</option>
+            <option>Select a Student</option>
             {allStudents.map(student=><option value={[student.first_name,student.last_name,student.id,]} key={student.id}>{student.first_name+" "+student.last_name}</option>)}            
             </select>
             <br />

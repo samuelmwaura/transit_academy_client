@@ -330,3 +330,11 @@ margin-bottom:1px;
 .gradeSelect{
   width:7em;
 }
+
+#submitGrade{
+  background-color: #0b4882;
+  color: white;
+  border-radius: 5px;
+  margin-top:10px;
+  margin-left:25em;  
+}
