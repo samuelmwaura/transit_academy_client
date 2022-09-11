@@ -13,7 +13,6 @@ function PaymentsCard({loggedInUser,studentPayments,setStudentPayments}){
       return total + payment.amount
   },0)
 
-  console.log(studentPayments)
     return(
         <div className="dashboardCard">
         <span className="material-icons">payment</span>

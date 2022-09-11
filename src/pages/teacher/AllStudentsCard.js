@@ -8,7 +8,7 @@ const allStudents = loggedInUser.allocations.map(allocation => {
 
   return (
    <div className="dashboardCard">
-        <span className="material-icons">auto_stories</span>
+        <span className="material-icons">people</span>
         <h2><span>{allStudents.length}</span>Total Student audience</h2>
     </div>
   )

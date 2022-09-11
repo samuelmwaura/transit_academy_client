@@ -3,6 +3,7 @@ import React, { useState } from "react"
 function Grade({loggedInUser}){   
   const [selectedAllocationId,setSelectedAllocationId] = useState(0)
   const [courseGrades,setCourseGrades] = useState({})
+  const [gradesPosted,setGradesPosted] = useState(false)
 
   const allRegistrations = loggedInUser.allocations.map(allocation => {
     return allocation.course.registrations //for each allocated course return the course and its registrations
@@ -21,18 +22,17 @@ function handleGradeChange(event){   //Takes the property a the id of the regist
 
 function handleSubmit(event){
  event.preventDefault()
-
- console.log(courseGrades)
-
+  
  fetch("http://localhost:9292/registrations/grades",{
   method:"POST",
   headers:{
     "content-Type":"Application/json",
     "Accept":"Application/json"
-  }
+  },
+  body:JSON.stringify(courseGrades)
  })
  .then(response=>response.json())
- .then(data=>console.log(data))
+ .then(data=>setGradesPosted(true))
  .catch(error=>console.log(error))
 }
 
@@ -62,29 +62,29 @@ function handleSubmit(event){
       <tbody>         
      {displayedRegistrations.map(registration=>
      <tr key={registration.id}>
-      <td>{registration.course_name}</td>
-      <td>{registration.student_name}</td>      
-      <td>{registration.student_id}</td>
-      <td>{registration.grade}</td>
-      <td>{registration.grade === "Not Graded" ?
-        <select className="gradeSelect" name={registration.id} onChange={handleGradeChange}>
-         <option value="missing">Select</option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-          <option value="D">D</option>
-          <option value="E">E</option>
-        </select>:null
-       }</td>
+        <td>{registration.course_name}</td>
+        <td>{registration.student_name}</td>      
+        <td>{registration.student_id}</td>
+        <td>{registration.grade}</td>
+        <td>{registration.grade === "Not Graded" ?
+          <select className="gradeSelect" name={registration.id} onChange={handleGradeChange}>
+          <option value="missing">Select</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+          </select>:null
+        }</td>
       </tr>)}
       </tbody>
    </table>   
    <input id="submitGrade" type="submit" value="post Grades"/>
+   <p style={{color:"green"}}>{gradesPosted?"Students graded Successfully":null}</p>
         </form>
        </div>
       </div> 
       </div> 
     )
-
 }
 export default Grade
