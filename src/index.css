@@ -326,3 +326,7 @@ margin-bottom:1px;
  flex-direction: column;
  padding-left: 3em;
 }
+
+.gradeSelect{
+  width:7em;
+}
