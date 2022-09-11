@@ -17,7 +17,7 @@ function handleOnchange(event){
     setFilterer(event.target.value)
 }
 
-const displayedPyments = studentPayments.filter(payment => payment.student_name.toLowerCase().includes(filterer.toLowerCase()))
+const displayedPayments = studentPayments.filter(payment => payment.student_name.toLowerCase().includes(filterer.toLowerCase())).reverse() //reverse the array to start with the latest
 
   return(<> 
     <FinanceSidebar/>
@@ -41,7 +41,7 @@ const displayedPyments = studentPayments.filter(payment => payment.student_name.
            </tr>
         </thead>
         <tbody>         
-           {displayedPyments.map(payment=>{
+           {displayedPayments.map(payment=>{
           return <tr key={payment.id}>
               <td>{new Date(payment.created_at).toLocaleDateString()}</td>
               <td>{payment.student_id}</td>
@@ -54,7 +54,7 @@ const displayedPyments = studentPayments.filter(payment => payment.student_name.
       </div>
       <div id="registerPayment">
         <h2>Record a School fees payment.</h2>
-        <CreatePaymentForm />
+        <CreatePaymentForm studentPayments={studentPayments} setStudentPayments={setStudentPayments}/>
         </div>
       </div>
       

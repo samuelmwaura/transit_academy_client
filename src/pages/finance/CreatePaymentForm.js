@@ -1,6 +1,6 @@
 import React, {useState,useEffect } from "react";
 
-function CreatePaymentForm(){
+function CreatePaymentForm({studentPayments,setStudentPayments}){
 const [allStudents,setAllStudents] = useState([])
 const [paymentDetails,setPaymentDetails] = useState({student_name:"",amount:0,student_id:0})
 const [isCreated,setIsCreated] = useState(false)
@@ -25,7 +25,6 @@ setPaymentDetails({...paymentDetails,student_name:[studentDetails[0],studentDeta
 
 function handleOnsubmit(event){
 event.preventDefault()
-
 fetch("http://localhost:9292/payments",{
     method:"POST",
     headers:{
@@ -35,7 +34,10 @@ fetch("http://localhost:9292/payments",{
     body:JSON.stringify(paymentDetails)
 })
 .then(response=>response.json())
-.then(data=>console.log(data))
+.then(data=>{
+    setStudentPayments([...studentPayments,data])
+    setIsCreated(true)
+})
 .catch(error=>console.log(error))
 }
 
@@ -53,7 +55,7 @@ fetch("http://localhost:9292/payments",{
             <div>
             <input type="submit" />
             </div>
-            <p>{isCreated?"Payment registered successfully!":null}</p>
+            <p>{isCreated?"Payment Captured successfully.Check the table top.":null}</p>
         </form>
    )
 }
