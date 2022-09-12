@@ -1,4 +1,4 @@
-import React,{useEffect}from 'react'
+import React from 'react'
 import Allocations from '../../components/teacher/Allocations';
 import AllAllocationsCard from './AllAllocationsCard'
 import AllStudentsCard from './AllStudentsCard';

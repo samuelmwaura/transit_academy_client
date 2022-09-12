@@ -22,7 +22,6 @@ function App(){
  const [studentPayments,setStudentPayments] = useState([])
 
 
-
  useEffect(()=>{
     fetch("http://localhost:9292/courses")
     .then(response=>response.json())

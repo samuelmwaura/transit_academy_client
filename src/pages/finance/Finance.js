@@ -11,7 +11,7 @@ useEffect(()=>{
     .then(response=>response.json())
     .then(data=>setStudentPayments(data))
     .catch(error=>console.log(error))
-},[0])
+},[])
 
 function handleOnchange(event){
     setFilterer(event.target.value)

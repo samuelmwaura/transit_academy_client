@@ -2,12 +2,14 @@ import React,{useEffect} from "react";
 
 function PaymentsCard({loggedInUser,studentPayments,setStudentPayments}){
 
-  useEffect(()=>{     
+  useEffect(()=>{   
+    
     fetch(`http://localhost:9292/students/payments/${loggedInUser.id}`)
     .then(response=>response.json())
-    .then(data=>setStudentPayments([...data.payments ]))
+    .then(data=>setStudentPayments([...data.payments]))
     .catch(error=>console.log(error))
-   },[])
+    
+   },[loggedInUser,setStudentPayments])
 
   const totalFees = studentPayments.reduce((total,payment)=>{
       return total + payment.amount
