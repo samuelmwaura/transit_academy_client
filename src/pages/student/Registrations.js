@@ -8,7 +8,7 @@ function Registrations({loggedInUser,courses,setloggedInUser}){
    if(window.confirm("Confirm De-registration from the course.")){
       console.log(id)
 
-      fetch(`http://localhost:9292/registrations/${id}`,{
+      fetch(`https://transitacademyregistry.herokuapp.com/registrations/${id}`,{
          method:"DELETE"
       })
       .then(response=>response.json())

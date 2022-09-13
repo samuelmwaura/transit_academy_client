@@ -7,7 +7,7 @@ const [studentPayments,setStudentPayments] = useState([])
 const [filterer,setFilterer] = useState("")
 
 useEffect(()=>{   
-    fetch("http://localhost:9292/payments")
+    fetch("https://transitacademyregistry.herokuapp.com/payments")
     .then(response=>response.json())
     .then(data=>setStudentPayments(data))
     .catch(error=>console.log(error))

@@ -23,7 +23,7 @@ function handleGradeChange(event){   //Takes the property a the id of the regist
 function handleSubmit(event){
  event.preventDefault()
   
- fetch("http://localhost:9292/registrations/grades",{
+ fetch("https://transitacademyregistry.herokuapp.com/registrations/grades",{
   method:"POST",
   headers:{
     "content-Type":"Application/json",

@@ -16,7 +16,7 @@ function Login({setLoggedInUser}){
  function handleLogin(event){
   event.preventDefault()
    
-  fetch("http://localhost:9292/login",{
+  fetch("https://transitacademyregistry.herokuapp.com/login",{
     method:"POST",
     headers:{
     "content-Type":"Application/json",

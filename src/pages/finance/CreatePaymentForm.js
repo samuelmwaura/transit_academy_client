@@ -6,7 +6,7 @@ const [paymentDetails,setPaymentDetails] = useState({student_name:"",amount:0,st
 const [isCreated,setIsCreated] = useState(false)
 
 useEffect(()=>{
-    fetch("http://localhost:9292/students")
+    fetch("https://transitacademyregistry.herokuapp.com/students")
     .then(response=> response.json())
     .then(data=>{
         setAllStudents(data)
@@ -25,7 +25,7 @@ setPaymentDetails({...paymentDetails,student_name:[studentDetails[0],studentDeta
 
 function handleOnsubmit(event){
 event.preventDefault()
-fetch("http://localhost:9292/payments",{
+fetch("https://transitacademyregistry.herokuapp.com/payments",{
     method:"POST",
     headers:{
         "Content-Type":"Application/json",

@@ -23,7 +23,7 @@ function App(){
 
 
  useEffect(()=>{
-    fetch("http://localhost:9292/courses")
+    fetch("https://transitacademyregistry.herokuapp.com/courses")
     .then(response=>response.json())
     .then(data=>{
       setCourses(data)

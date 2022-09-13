@@ -45,13 +45,13 @@ The project backend is built using `ruby sinatra framework` that uses the `Activ
 
 ## System Acess
 
-Mess around  the project as a student using the username `Dudley13` and `Dudley` as the password.
+Mess around  the project as a student using the username `Marcos1` and `Marcos` as the password.
 
 ## Accessing the hosted project.
    
 This project is hosted in a model of halves. This frontend that is built using React.js is hosted on `Netlify` while the powering `Ruby Sinatra App` is hosted on `Heroku`.
 
-The project can be accessed live at [Transist Registry.]().
+The project can be accessed live at [Transist Registry.](https://transitregistry.netlify.app/).
 
   ## Get a copy/ personify.
 

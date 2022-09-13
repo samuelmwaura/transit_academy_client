@@ -14,7 +14,7 @@ function handleOnchange(event){
   function handleOnsubmit(event){
     event.preventDefault()
 
-    fetch("http://localhost:9292/registrations",{
+    fetch("https://transitacademyregistry.herokuapp.com/registrations",{
         method:"POST",
         headers:{
            "content_Type":"Application/json",

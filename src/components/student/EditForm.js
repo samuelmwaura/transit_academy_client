@@ -11,7 +11,7 @@ function Editform({loggedInUser,courses,setloggedInUser}){
    function handleOnsubmit(event){
      event.preventDefault()
 
-     fetch(`http://localhost:9292/registrations/${updateDetails.id}`,{
+     fetch(`https://transitacademyregistry.herokuapp.com/registrations/${updateDetails.id}`,{
         method:"PATCH",
         headers:{
             "content-Type":"Application/json",

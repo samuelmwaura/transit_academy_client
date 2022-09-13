@@ -4,7 +4,7 @@ function PaymentsCard({loggedInUser,studentPayments,setStudentPayments}){
 
   useEffect(()=>{   
     
-    fetch(`http://localhost:9292/students/payments/${loggedInUser.id}`)
+    fetch(`https://transitacademyregistry.herokuapp.com/students/payments/${loggedInUser.id}`)
     .then(response=>response.json())
     .then(data=>setStudentPayments([...data.payments]))
     .catch(error=>console.log(error))
